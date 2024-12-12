@@ -27,14 +27,14 @@ function App() {
           <h2>Tecnologías</h2>
           <div className="tech-slider">
             <div className="tech-track">
-              <img src="/java.svg" alt="Java" />
-              <img src="/javascript.svg" alt="JavaScript" />
-              <img src="/python.svg" alt="Python" />
-              <img src="/kotlin.svg" alt="Kotlin" />
-              <img src="/spring.svg" alt="Spring Boot" />
-              <img src="/angular.svg" alt="Angular" />
-              <img src="/android-studio-icon.webp" alt="Android Studio" />
-              <img src="/node-js.svg" alt="NodeJS" />
+              <img src="./src/assets/java.svg" alt="Java" />
+              <img src="./src/assets/javascript.svg" alt="JavaScript" />
+              <img src="./src/assets/python.svg" alt="Python" />
+              <img src="./src/assets/kotlin.svg" alt="Kotlin" />
+              <img src="./src/assets/spring.svg" alt="Spring Boot" />
+              <img src="./src/assets/angular.svg" alt="Angular" />
+              <img src="./src/assets/android-studio-icon.webp" alt="Android Studio" />
+              <img src="./src/assets/node-js.svg" alt="NodeJS" />
             </div>
           </div>
         </div>
