@@ -1,5 +1,14 @@
 import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa6";
 import "./App.css";
+import logo from "./assets/logo.png";
+import javaIcon from "./assets/java.svg";
+import javascriptIcon from "./assets/javascript.svg";
+import pythonIcon from "./assets/python.svg";
+import kotlinIcon from "./assets/kotlin.svg";
+import springIcon from "./assets/spring.svg";
+import angularIcon from "./assets/angular.svg";
+import androidIcon from "./assets/android-studio-icon.webp";
+import nodeIcon from "./assets/node-js.svg";
 
 function App() {
   return (
@@ -9,7 +18,7 @@ function App() {
         <div className="header">
           <div className="logo">
             <img
-              src="/logo_portfolio_web.png"
+              src={logo}
               alt="Logo de tu portafolio"
               className="logo-image"
             />
@@ -27,14 +36,14 @@ function App() {
           <h2>Tecnologías</h2>
           <div className="tech-slider">
             <div className="tech-track">
-              <img src="./src/assets/java.svg" alt="Java" />
-              <img src="./src/assets/javascript.svg" alt="JavaScript" />
-              <img src="./src/assets/python.svg" alt="Python" />
-              <img src="./src/assets/kotlin.svg" alt="Kotlin" />
-              <img src="./src/assets/spring.svg" alt="Spring Boot" />
-              <img src="./src/assets/angular.svg" alt="Angular" />
-              <img src="./src/assets/android-studio-icon.webp" alt="Android Studio" />
-              <img src="./src/assets/node-js.svg" alt="NodeJS" />
+              <img src={javaIcon} alt="Java" />
+              <img src={javascriptIcon} alt="JavaScript" />
+              <img src={pythonIcon} alt="Python" />
+              <img src={kotlinIcon} alt="Kotlin" />
+              <img src={springIcon} alt="Spring Boot" />
+              <img src={angularIcon} alt="Angular" />
+              <img src={androidIcon} alt="Android Studio" />
+              <img src={nodeIcon} alt="NodeJS" />
             </div>
           </div>
         </div>
