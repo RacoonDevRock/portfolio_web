@@ -9,7 +9,8 @@ import springIcon from "./assets/spring.svg";
 import angularIcon from "./assets/angular.svg";
 import androidIcon from "./assets/android-studio-icon.webp";
 import nodeIcon from "./assets/node-js.svg";
-import GitHubProjects from "./components/GitHubProjects";
+import GitHubProjects from "./components/github/GitHubProjects";
+import Typewriter from "typewriter-effect";
 
 function App() {
   return (
@@ -25,10 +26,24 @@ function App() {
             />
           </div>
           <div className="header-text">
-            <h1>¡Bienvenido!</h1>
+            <h1>
+              <Typewriter
+                options={{
+                  strings: [
+                    "¡Bienvenido!",
+                    "Me llamo Guillermo",
+                    "Un gusto tenerte aquí =)",
+                  ],
+                  autoStart: true,
+                  loop: true,
+                  cursor: "_",
+                  delay: 75,
+                  deleteSpeed: 50,
+                }}
+              />
+            </h1>
             <p>
-              Este es un punto de partida para mostrar mis habilidades y
-              proyectos.
+              <strong>A.K.A RacoonDevRock</strong>
             </p>
           </div>
         </div>
