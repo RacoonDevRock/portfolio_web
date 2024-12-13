@@ -9,6 +9,7 @@ import springIcon from "./assets/spring.svg";
 import angularIcon from "./assets/angular.svg";
 import androidIcon from "./assets/android-studio-icon.webp";
 import nodeIcon from "./assets/node-js.svg";
+import GitHubProjects from "./components/GitHubProjects";
 
 function App() {
   return (
@@ -50,12 +51,7 @@ function App() {
         {/* Columna 1: Tecnologías */}
 
         {/* Columna 2: Experiencia */}
-        <div className="column">
-          <h2>Experiencia</h2>
-          <ul>
-            <li>...</li>
-          </ul>
-        </div>
+        <GitHubProjects />
 
         {/* Datos del contacto */}
         <div className="contact">
