@@ -73,7 +73,7 @@ body {
   flex-direction: column; /* Organiza en columna para poner los íconos abajo */
   align-items: center; /* Centra horizontalmente el contenido */
   justify-content: center; /* Centra verticalmente */
-  margin: 0; /* Elimina márgenes */
+  margin: 20px 0; /* Elimina márgenes */
   position: relative; /* Asegura que el contenido interno pueda posicionarse */
 }
 
@@ -169,35 +169,39 @@ li {
   display: flex;
   justify-content: center; /* Centra los íconos */
   gap: 15px; /* Espaciado uniforme entre los íconos */
-  width: 100%; /* Asegúrate de que no desborde */
+  flex-wrap: wrap; /* Permite que los íconos se adapten en filas si no hay suficiente espacio */
   margin-top: 10px; /* Ajusta el margen superior */
-  flex-wrap: wrap; /* Permite que los íconos se adapten si no hay suficiente espacio */
 }
 
 .contact-icons a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px; /* Tamaño del fondo circular */
+  width: 40px; /* Ajusta el tamaño del fondo circular */
   height: 40px;
-  background-color: #444444;
-  border-radius: 50%;
-  transition: transform 0.3s ease, background-color 0.3s ease;
+  transition: ilter 0.3s ease-in-out, transform 0.3s ease-in-out; /* Transiciones suaves */
+}
+
+.contact-icons img[alt="Github"] {
+  filter: drop-shadow(0 0 10px rgba(38, 0, 255, 0.8));
+}
+
+.contact-icons img[alt="LinkedIn"] {
+  filter: drop-shadow(0 0 10px rgba(0, 255, 225, 0.4)); /* Amarillo para JS */
+}
+
+.contact-icons img[alt="Gmail"] {
+  filter: drop-shadow(0 0 10px rgba(255, 132, 0, 0.4)); /* Amarillo para JS */
 }
 
 .contact-icons a:hover {
-  background-color: #000000; /* Cambia el fondo al pasar el mouse */
-  transform: scale(1.1); /* Aumenta ligeramente el tamaño del ícono */
+  transform: scale(1.1); /* Agranda ligeramente el ícono */
 }
 
-.contact-icons .icon {
-  font-size: 1.5rem; /* Tamaño del ícono */
-  color: #ffffff; /* Color inicial */
-  transition: color 0.3s ease;
-}
-
-.contact-icons a:hover .icon {
-  color: #ffffff; /* Cambia el color del ícono al pasar el mouse */
+.icon {
+  width: 25px; /* Ajusta el tamaño del ícono */
+  height: 25px;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
 }
 
 @media (prefers-color-scheme: light) {
@@ -275,6 +279,10 @@ li {
   margin-bottom: 20px;
 }
 
+.technologies h2 {
+  margin: 10px 0 20px 0;
+}
+
 .tech-slider {
   overflow: visible; /* Permite que el contenido completo sea visible */
   width: 100%; /* Ocupa todo el ancho del contenedor */
@@ -301,7 +309,9 @@ li {
 
 /* Java */
 .tech-track img[alt="Java"] {
-  filter: drop-shadow(0 0 10px rgba(255, 87, 34, 0.4)); /* Color predominante de Java */
+  filter: drop-shadow(
+    0 0 10px rgba(255, 87, 34, 0.4)
+  ); /* Color predominante de Java */
 }
 
 /* JavaScript */
@@ -311,7 +321,9 @@ li {
 
 /* Python */
 .tech-track img[alt="Python"] {
-  filter: drop-shadow(0 0 10px rgba(53, 114, 182, 0.4)); /* Azul predominante de Python */
+  filter: drop-shadow(
+    0 0 10px rgba(53, 114, 182, 0.4)
+  ); /* Azul predominante de Python */
 }
 
 /* Kotlin */

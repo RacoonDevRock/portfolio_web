@@ -24,7 +24,7 @@
 }
 
 .project-card:hover {
-  box-shadow: 0 8px 20px #61dafb; /* Efecto de brillo */
+  box-shadow: 0 8px 20px #ffffff; /* Efecto de brillo */
   transform: translateY(-10px); /* Eleva la card ligeramente */
 }
 
@@ -35,12 +35,11 @@
   word-wrap: break-word; /* Maneja nombres largos */
 }
 
-
 .project-card a {
-  color: #61dafb;
   font-size: 1.2rem;
   margin-bottom: 10px;
   display: block; /* Separa del botón */
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
 }
 
 .project-card a:hover {
@@ -70,7 +69,7 @@
 .project-details {
   margin-top: 15px;
   padding: 10px;
-  background-color: #3399ff;
+  background-color: #242424;
   border-radius: 5px;
   animation: fadeIn 0.3s ease-in-out; /* Animación para mostrar detalles */
 }

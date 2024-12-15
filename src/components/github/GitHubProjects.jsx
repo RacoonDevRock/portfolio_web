@@ -77,7 +77,7 @@ function GitHubProjects() {
 
   return (
     <div className="projects-container">
-      <h2>Mis Proyectos de Github</h2>
+      <h2>Proyectos</h2>
       <div className="projects-grid">
         {projects.map((project) => (
           <div key={project.id} className="project-card">

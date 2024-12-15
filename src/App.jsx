@@ -1,6 +1,5 @@
-import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa6";
 import "./App.css";
-import logo from "./assets/logo.png";
+import logo from "./assets/logo.webp";
 import javaIcon from "./assets/java.svg";
 import javascriptIcon from "./assets/javascript.svg";
 import pythonIcon from "./assets/python.webp";
@@ -12,8 +11,13 @@ import nodeIcon from "./assets/node-js.svg";
 import dockerIcon from "./assets/docker.svg";
 import terraformIcon from "./assets/terraform.svg";
 import firebaseIcon from "./assets/firebase.svg";
+import linkedinIcon from "./assets/linkedin.svg";
+import gmailIcon from "./assets/gmail.svg";
 import GitHubProjects from "./components/github/GitHubProjects";
 import Typewriter from "typewriter-effect";
+import { TbFileCv } from "react-icons/tb";
+import cvFile from "./assets/CV_SANCHEZ_PALACIOS_LUIS_GUILLERMO.pdf";
+import { FaGithub } from "react-icons/fa6";
 
 function App() {
   return (
@@ -42,14 +46,22 @@ function App() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaLinkedin className="icon" />
+                <img src={linkedinIcon} alt="LinkedIn" className="icon" />
               </a>
               <a
                 href="mailto:nothicc04@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaEnvelope className="icon" />
+                <img src={gmailIcon} alt="Gmail" className="icon" />
+              </a>
+              <a
+                href={cvFile}
+                download="CV_SANCHEZ_PALACIOS_LUIS_GUILLERMO"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <TbFileCv className="icon" />
               </a>
             </div>
           </div>
