@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 import "./GitHubProjects.css";
 import { FaGithub } from "react-icons/fa6";
 
-const token = import.meta.env.VITE_GITHUB_TOKEN;
-const apiUrl = import.meta.env.VITE_API_URL;
+const apiUrl = import.meta.env.VITE_API_URL_BACKEND;
 
 function GitHubProjects() {
   const [projects, setProjects] = useState([]);
@@ -12,68 +11,49 @@ function GitHubProjects() {
   const [visibleProjectId, setVisibleProjectId] = useState(null);
 
   const handleToggleDetails = async (project) => {
-    // Si el proyecto ya está visible, ocultar detalles
     if (visibleProjectId === project.id) {
       setVisibleProjectId(null);
       return;
     }
 
-    // Si no está en cache, cargar los detalles
-    if (!projectDetails[project.id]) {
-      try {
-        const detailsResponse = await fetch(project.url, {
-          headers: {
-            Authorization: `token ${token}`,
-          },
-        });
-        const details = await detailsResponse.json();
-
-        const languagesResponse = await fetch(details.languages_url, {
-          headers: {
-            Authorization: `token ${token}`,
-          },
-        });
-        const languages = await languagesResponse.json();
-
-        // Guardar los detalles en el estado
-        setProjectDetails((prevDetails) => ({
-          ...prevDetails,
-          [project.id]: {
-            description: details.description || "Sin descripción disponible",
-            languages: Object.keys(languages),
-          },
-        }));
-      } catch (error) {
-        console.error("Error al cargar detalles del proyecto:", error);
-        return;
-      }
+    if (projectDetails[project.id]) {
+      setVisibleProjectId(project.id);
+      return;
     }
 
-    // Mostrar los detalles del proyecto actual
-    setVisibleProjectId(project.id);
+    try {
+      const detailsResponse = await fetch(`${apiUrl}/${project.name}`);
+      const details = await detailsResponse.json();
+
+      setProjectDetails((prevDetails) => ({
+        ...prevDetails,
+        [project.id]: details,
+      }));
+
+      setVisibleProjectId(project.id);
+    } catch (error) {
+      console.error("Error al cargar detalles del proyecto:", error);
+    }
   };
 
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await fetch(apiUrl, {
-          headers: {
-            Authorization: `token ${token}`,
-          },
-        });
+        const response = await fetch(apiUrl);
         const data = await response.json();
 
         const projects = data.map((project) => ({
           id: project.id,
           name: project.name,
-          url: project.url,
+          description: project.description,
+          language: project.language,
           html_url: project.html_url,
         }));
 
         setProjects(projects);
         setIsLoading(false);
       } catch (error) {
-        console.error("Error al obtener los proyectos");
+        console.error("Error al obtener los proyectos:", error);
         setIsLoading(false);
       }
     };
@@ -119,7 +99,9 @@ function GitHubProjects() {
               <div className="project-details">
                 <p>
                   <strong>Tecnologías:</strong>{" "}
-                  {projectDetails[project.id].languages.join(" - ")}
+                  {projectDetails[project.id].languages.length > 0
+                    ? projectDetails[project.id].languages.join(", ")
+                    : "No especificado"}
                 </p>
               </div>
             )}

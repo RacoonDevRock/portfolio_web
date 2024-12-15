@@ -12,20 +12,20 @@
 }
 
 .project-card {
-  background: #2b2b2b;
+  background: linear-gradient(135deg, #333333, #444444);
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   color: #ffffff;
   text-align: center; /* Centrar texto */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   position: relative;
   overflow: hidden; /* Evita que el contenido se desborde */
 }
 
 .project-card:hover {
   box-shadow: 0 8px 20px #61dafb; /* Efecto de brillo */
-  transform: translateY(-4px); /* Eleva la card ligeramente */
+  transform: translateY(-10px); /* Eleva la card ligeramente */
 }
 
 .project-card h3 {
@@ -57,7 +57,7 @@
   border-radius: 4px;
   cursor: pointer;
   font-size: 0.9rem;
-  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
   display: block;
   margin: 0 auto; /* Centra el botón */
 }
@@ -70,7 +70,7 @@
 .project-details {
   margin-top: 15px;
   padding: 10px;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: #3399ff;
   border-radius: 5px;
   animation: fadeIn 0.3s ease-in-out; /* Animación para mostrar detalles */
 }

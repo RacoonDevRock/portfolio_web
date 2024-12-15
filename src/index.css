@@ -1,13 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap");
 
 :root {
-  font-family: 'Doto', sans-serif;
+  font-family: "Doto", sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
+  background: linear-gradient(135deg, #1e1e1e, #333333);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -18,7 +19,8 @@
 body {
   margin: 0;
   display: flex;
-  place-items: center;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
   min-width: 320px;
   min-height: 100vh;
   background-color: var(--background-color);
@@ -30,9 +32,10 @@ body {
   width: 100%;
   margin: 0 auto;
   padding: 20px;
-  background: #1e1e1e;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background: #1e1e1e;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 1s ease-in-out;
 }
 
 .header {
@@ -48,36 +51,40 @@ body {
 
 .header-text {
   display: flex;
-  flex-direction: column; /* Asegura que el título y el párrafo estén en columna */
-  justify-content: center; /* Centra verticalmente el texto */
-  flex: 1; /* Permite que el texto ocupe más espacio que la imagen */
+  flex-direction: column; /* Organiza el título y el subtítulo en columna */
+  justify-content: center; /* Centra verticalmente */
+  flex: 1; /* Permite que el texto ocupe más espacio */
   color: #f9f9f9;
 }
 
 .header-text h1 {
-  font-size: 2rem;
-  margin-bottom: 10px;
+  font-size: 1.8rem;
+  margin: 0;
 }
 
 .header-text p {
   font-size: 1rem;
   color: #c7c7c7;
+  margin: 0;
 }
 
 .logo {
   display: flex;
-  align-items: center; /* Centra la imagen verticalmente */
-  justify-content: center; /* Centra la imagen horizontalmente */
-  margin: 0; /* Elimina márgenes adicionales */
+  flex-direction: column; /* Organiza en columna para poner los íconos abajo */
+  align-items: center; /* Centra horizontalmente el contenido */
+  justify-content: center; /* Centra verticalmente */
+  margin: 0; /* Elimina márgenes */
+  position: relative; /* Asegura que el contenido interno pueda posicionarse */
 }
 
 .logo-image {
-  max-width: 150px;
-  height: auto;
-  border-radius: 50%;
+  max-width: 120px; /* Ajusta el tamaño máximo del logo */
+  height: auto; /* Mantén la proporción de aspecto */
+  border-radius: 50%; /* Hace que el logo sea circular */
 }
 
-h1, h2 {
+h1,
+h2 {
   text-align: center;
   color: #f9f9f9;
   font-weight: 700; /* Estilo para títulos */
@@ -87,6 +94,7 @@ h2 {
   position: relative;
   display: inline-block; /* Asegura que el efecto funcione correctamente */
   color: #f9f9f9;
+  font-size: 1.8rem; /* Aumentado */
   transition: color 0.3s ease-in-out; /* Transición suave para el color */
 }
 
@@ -109,9 +117,11 @@ h2:hover::after {
   width: 100%; /* La línea se expande al 100% del ancho del texto */
 }
 
-p, li {
+p,
+li {
   color: #c7c7c7;
   font-weight: 400; /* Estilo para texto normal */
+  font-size: 1.1rem;
 }
 
 .columns {
@@ -156,30 +166,33 @@ li {
 }
 
 .contact-icons {
-  display: flex; /* Distribuye los íconos en fila */
-  gap: 20px; /* Espaciado uniforme entre los íconos */
-  justify-content: center; /* Centra los íconos horizontalmente */
+  display: flex;
+  justify-content: center; /* Centra los íconos */
+  gap: 15px; /* Espaciado uniforme entre los íconos */
+  width: 100%; /* Asegúrate de que no desborde */
+  margin-top: 10px; /* Ajusta el margen superior */
+  flex-wrap: wrap; /* Permite que los íconos se adapten si no hay suficiente espacio */
 }
 
 .contact-icons a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 50px; /* Tamaño cuadrado uniforme para los íconos */
-  height: 50px;
-  background-color: #444444; /* Fondo detrás del ícono */
-  border-radius: 50%; /* Hace que el fondo sea circular */
+  width: 40px; /* Tamaño del fondo circular */
+  height: 40px;
+  background-color: #444444;
+  border-radius: 50%;
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .contact-icons a:hover {
-  background-color: #61dafb; /* Cambia el fondo al pasar el mouse */
+  background-color: #000000; /* Cambia el fondo al pasar el mouse */
   transform: scale(1.1); /* Aumenta ligeramente el tamaño del ícono */
 }
 
 .contact-icons .icon {
   font-size: 1.5rem; /* Tamaño del ícono */
-  color: #f9f9f9; /* Color inicial */
+  color: #ffffff; /* Color inicial */
   transition: color 0.3s ease;
 }
 
@@ -197,11 +210,13 @@ li {
     background: #f9f9f9;
   }
 
-  h1, h2 {
+  h1,
+  h2 {
     color: #213547;
   }
 
-  p, li {
+  p,
+  li {
     color: #555;
   }
 }
@@ -220,7 +235,13 @@ li {
 }
 
 .icon:hover {
-  color: #747bff; /* Cambia el color al pasar el mouse */
+  color: #61dafb; /* Azul claro */
+  background: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* Fondo circular tenue al pasar el mouse */
 }
 
 .tech-icons {
@@ -275,11 +296,67 @@ li {
   height: 60px; /* Tamaño fijo */
   object-fit: contain; /* Mantén las proporciones */
   margin: 0 10px; /* Espaciado horizontal */
-  transition: transform  0.3s ease-in-out; /* Transición para ambos efectos */
+  transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out; /* Transiciones suaves */
 }
 
+/* Java */
+.tech-track img[alt="Java"] {
+  filter: drop-shadow(0 0 10px rgba(255, 87, 34, 0.4)); /* Color predominante de Java */
+}
+
+/* JavaScript */
+.tech-track img[alt="JavaScript"] {
+  filter: drop-shadow(0 0 10px rgba(255, 221, 0, 0.4)); /* Amarillo para JS */
+}
+
+/* Python */
+.tech-track img[alt="Python"] {
+  filter: drop-shadow(0 0 10px rgba(53, 114, 182, 0.4)); /* Azul predominante de Python */
+}
+
+/* Kotlin */
+.tech-track img[alt="Kotlin"] {
+  filter: drop-shadow(0 0 10px rgba(255, 94, 136, 0.4)); /* Rosa para Kotlin */
+}
+
+/* Spring Boot */
+.tech-track img[alt="Spring Boot"] {
+  filter: drop-shadow(0 0 10px rgba(97, 205, 85, 0.4)); /* Verde para Spring */
+}
+
+/* Angular */
+.tech-track img[alt="Angular"] {
+  filter: drop-shadow(0 0 10px rgba(221, 27, 45, 0.4)); /* Rojo para Angular */
+}
+
+/* Android Studio */
+.tech-track img[alt="Android Studio"] {
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.4)); /* Verde Android */
+}
+
+/* NodeJS */
+.tech-track img[alt="NodeJS"] {
+  filter: drop-shadow(0 0 10px rgba(143, 188, 66, 0.4)); /* Verde NodeJS */
+}
+
+/* Docker */
+.tech-track img[alt="Docker"] {
+  filter: drop-shadow(0 0 10px rgba(0, 136, 204, 0.4)); /* Azul Docker */
+}
+
+/* Terraform */
+.tech-track img[alt="Terraform"] {
+  filter: drop-shadow(0 0 10px rgba(128, 90, 213, 0.4)); /* Púrpura Terraform */
+}
+
+/* Firebase */
+.tech-track img[alt="Firebase"] {
+  filter: drop-shadow(0 0 10px rgba(255, 193, 7, 0.4)); /* Amarillo Firebase */
+}
+
+/* Hover */
 .tech-track img:hover {
-  transform: scale(1.1); /* Hace que el ícono crezca ligeramente */
+  transform: scale(1.2); /* Aumenta el tamaño del ícono al pasar el ratón */
 }
 
 /* Animación de scroll continuo */
@@ -290,4 +367,57 @@ li {
   100% {
     transform: translateX(-50%);
   }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr; /* Una sola columna */
+    gap: 15px; /* Reduce el espacio entre proyectos */
+  }
+
+  .header-text h1 {
+    font-size: 1rem; /* Ajusta el tamaño del título */
+  }
+
+  .tech-track {
+    animation: none;
+  }
+  .container {
+    width: 95%; /* Asegúrate de que tenga un margen lateral pequeño */
+    padding: 15px; /* Reduce el padding */
+  }
+
+  .header {
+    flex-direction: column; /* Cambia el layout a columna en móviles */
+    text-align: center; /* Centra el texto */
+  }
+
+  .header-text h1 {
+    font-size: 1.2rem; /* Reduce el tamaño de la fuente */
+  }
+
+  .contact-icons {
+    flex-wrap: wrap; /* Permite que los íconos se adapten en filas */
+    gap: 10px; /* Reduce el espacio entre íconos */
+  }
+}
+
+.sticky-header {
+  position: sticky;
+  top: 0; /* Fija la posición en la parte superior */
+  background-color: #1e1e1e; /* Fondo del header */
+  padding: 10px 0; /* Espaciado */
+  z-index: 100; /* Asegura que esté encima de todo */
+  border-bottom: 2px solid #333333; /* Línea decorativa */
 }
