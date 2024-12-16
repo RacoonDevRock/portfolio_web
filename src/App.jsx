@@ -2,11 +2,10 @@ import "./App.css";
 import logo from "./assets/logo.webp";
 import javaIcon from "./assets/java.svg";
 import javascriptIcon from "./assets/javascript.svg";
-import pythonIcon from "./assets/python.webp";
 import kotlinIcon from "./assets/kotlin.svg";
 import springIcon from "./assets/spring.svg";
 import angularIcon from "./assets/angular.svg";
-import androidIcon from "./assets/android-studio-icon.webp";
+import androidIcon from "./assets/android.svg";
 import nodeIcon from "./assets/node-js.svg";
 import dockerIcon from "./assets/docker.svg";
 import terraformIcon from "./assets/terraform.svg";
@@ -15,13 +14,15 @@ import linkedinIcon from "./assets/linkedin.svg";
 import gmailIcon from "./assets/gmail.svg";
 import GitHubProjects from "./components/github/GitHubProjects";
 import Typewriter from "typewriter-effect";
-import { TbFileCv } from "react-icons/tb";
+import cvIcon from "./assets/resume.svg";
 import cvFile from "./assets/CV_SANCHEZ_PALACIOS_LUIS_GUILLERMO.pdf";
-import { FaGithub } from "react-icons/fa6";
+import githubIcon from "./assets/github.svg";
+import NeonBackground from "./components/background/NeonBackground";
 
 function App() {
   return (
     <>
+      <NeonBackground />
       <div className="container">
         {/* HEADER STICKY */}
         <div className="header">
@@ -30,6 +31,8 @@ function App() {
               src={logo}
               alt="Logo de tu portafolio"
               className="logo-image"
+              width="200px"
+              height="200px"
             />
 
             {/* ICONOS DE CONTACTO */}
@@ -38,13 +41,17 @@ function App() {
                 href="https://github.com/RacoonDevRock"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Visita mi perfil de GitHub"
+                title="GitHub"
               >
-                <FaGithub className="icon" />
+                <img src={githubIcon} alt="Github" className="icon" />
               </a>
               <a
                 href="https://www.linkedin.com/in/guillermo-sanchez-palacios"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Visita mi perfil de LinkedIn"
+                title="LinkedIn"
               >
                 <img src={linkedinIcon} alt="LinkedIn" className="icon" />
               </a>
@@ -52,6 +59,8 @@ function App() {
                 href="mailto:nothicc04@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Envíame un correo electrónico"
+                title="Correo Electrónico"
               >
                 <img src={gmailIcon} alt="Gmail" className="icon" />
               </a>
@@ -60,8 +69,11 @@ function App() {
                 download="CV_SANCHEZ_PALACIOS_LUIS_GUILLERMO"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Descargar mi currículum en PDF"
+                title="Descargar CV"
               >
-                <TbFileCv className="icon" />
+                <img src={cvIcon} alt="CV" className="icon" />
+                {/* <TbFileCv className="icon" /> */}
               </a>
             </div>
           </div>
@@ -101,7 +113,6 @@ function App() {
               <img src={javascriptIcon} alt="JavaScript" />
               <img src={angularIcon} alt="Angular" />
               <img src={nodeIcon} alt="NodeJS" />
-              <img src={pythonIcon} alt="Python" />
               <img src={dockerIcon} alt="Docker" />
               <img src={terraformIcon} alt="Terraform" />
               <img src={firebaseIcon} alt="Firebase" />

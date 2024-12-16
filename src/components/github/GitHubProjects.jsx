@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./GitHubProjects.css";
-import { FaGithub } from "react-icons/fa6";
+import githubIcon from "../../assets/github.svg";
 
 const apiUrl = import.meta.env.VITE_API_URL_BACKEND;
 
@@ -86,16 +86,20 @@ function GitHubProjects() {
               href={project.html_url}
               target="_blank"
               rel="noopener noreferrer"
+                aria-label={project.name}
+                title={project.name}
             >
-              <FaGithub className="icon" />
+              <img src={githubIcon} alt="Github" className="icon" />
             </a>
+            
+            <p> { project.description || "No hay descripcion" } </p>
             <button onClick={() => handleToggleDetails(project)}>
               {visibleProjectId === project.id
                 ? "Ocultar Detalles"
                 : "Ver Detalles"}
             </button>
             {/* Mostrar detalles si está visible */}
-            {visibleProjectId === project.id && projectDetails[project.id] && (
+            {visibleProjectId === project.id && projectDetails[project.id] && (  
               <div className="project-details">
                 <p>
                   <strong>Tecnologías:</strong>{" "}

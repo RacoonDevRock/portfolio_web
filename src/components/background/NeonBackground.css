@@ -1,0 +1,8 @@
+#neon-canvas {
+  position: fixed; /* Fija el canvas en la página */
+  top: 0;
+  left: 0;
+  width: 100vw; /* Ancho completo del viewport */
+  height: 100vh; /* Altura completa del viewport */
+  z-index: -1; /* Mantiene el canvas en el fondo */
+}
