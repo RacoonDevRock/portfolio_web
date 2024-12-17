@@ -12,19 +12,22 @@
 }
 
 .project-card {
-  background: linear-gradient(135deg, #333333, #444444);
-  padding: 20px;
+  background: #333333;
+  padding: 30px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   color: #ffffff;
-  position: relative; /* Posicionar los elementos en base a la card */
-  text-align: start; /* Alinear texto a la izquierda */
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Distribuye verticalmente */
-  gap: 10px;
+  position: relative;
   overflow: hidden;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.project-card .header-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
 }
 
 .project-card:hover {
@@ -34,18 +37,14 @@
 
 .project-card h3 {
   font-size: 1.1rem;
-  position: absolute;
-  top: 10px;
-  left: 20px;
   color: #e0e0e0;
+  margin: 0;
 }
 
 .project-card .icon {
-  position: absolute;
+  /* position: absolute; */
   top: 10px;
   right: 20px;
-  font-size: 1.5rem; /* Tamaño del ícono */
-  color: #e0e0e0;
   width: 40px; /* Ajusta el tamaño del fondo circular */
   height: 40px;
   transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
@@ -56,13 +55,9 @@
 }
 
 .project-card p {
-  margin: 20px 0 0 0;
-  text-align: start;
-  font-size: 0.9rem;
-  color: #c7c7c7;
+  margin: 0 0 20px 0;
+  text-align: justify;
   flex-grow: 1;
-  display: flex;
-  align-items: center;
 }
 
 .project-card a {
@@ -137,7 +132,7 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #1e1e1e;
+  background: none;
   color: #fff;
 }
 

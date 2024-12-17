@@ -1,0 +1,109 @@
+/* Slick */
+.technologies {
+  text-align: center;
+  background-color: #f9f9f9;
+  position: relative; /* Necesario para las pseudo-clases */
+  overflow: hidden;
+  background: #333333;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.technologies h2 {
+  margin: 10px 0 20px 0;
+}
+
+.tech-slider {
+  overflow: visible; /* Permite que el contenido completo sea visible */
+  width: 100%; /* Ocupa todo el ancho del contenedor */
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+}
+
+.tech-track {
+  display: flex;
+  gap: 20px; /* Espaciado entre los íconos */
+  justify-content: center; /* Centra horizontalmente los íconos */
+  flex-wrap: wrap; /* Permite que los íconos se adapten al tamaño del contenedor si es necesario */
+  width: 100%; /* Ajusta al ancho del contenedor */
+  margin: 0 auto; /* Centra horizontalmente */
+}
+
+.tech-track img {
+  width: 60px; /* Tamaño fijo */
+  height: 60px; /* Tamaño fijo */
+  object-fit: contain; /* Mantén las proporciones */
+  margin: 0 10px; /* Espaciado horizontal */
+  transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out; /* Transiciones suaves */
+}
+
+/* Java */
+.tech-track img[alt="Java"] {
+  filter: drop-shadow(
+    0 0 10px rgba(255, 87, 34, 0.4)
+  ); /* Color predominante de Java */
+}
+
+/* JavaScript */
+.tech-track img[alt="JavaScript"] {
+  filter: drop-shadow(0 0 10px rgba(255, 221, 0, 0.4)); /* Amarillo para JS */
+}
+
+/* Python */
+.tech-track img[alt="Python"] {
+  filter: drop-shadow(
+    0 0 10px rgba(53, 114, 182, 0.4)
+  ); /* Azul predominante de Python */
+}
+
+/* Kotlin */
+.tech-track img[alt="Kotlin"] {
+  filter: drop-shadow(0 0 10px rgba(255, 94, 136, 0.4)); /* Rosa para Kotlin */
+}
+
+/* Spring Boot */
+.tech-track img[alt="Spring Boot"] {
+  filter: drop-shadow(0 0 10px rgba(97, 205, 85, 0.4)); /* Verde para Spring */
+}
+
+/* Angular */
+.tech-track img[alt="Angular"] {
+  filter: drop-shadow(0 0 10px rgba(221, 27, 45, 0.4)); /* Rojo para Angular */
+}
+
+/* Android Studio */
+.tech-track img[alt="Android Studio"] {
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.4)); /* Verde Android */
+}
+
+/* NodeJS */
+.tech-track img[alt="NodeJS"] {
+  filter: drop-shadow(0 0 10px rgba(143, 188, 66, 0.4)); /* Verde NodeJS */
+}
+
+/* Docker */
+.tech-track img[alt="Docker"] {
+  filter: drop-shadow(0 0 10px rgba(0, 136, 204, 0.4)); /* Azul Docker */
+}
+
+/* Terraform */
+.tech-track img[alt="Terraform"] {
+  filter: drop-shadow(0 0 10px rgba(128, 90, 213, 0.4)); /* Púrpura Terraform */
+}
+
+/* Firebase */
+.tech-track img[alt="Firebase"] {
+  filter: drop-shadow(0 0 10px rgba(255, 193, 7, 0.4)); /* Amarillo Firebase */
+}
+
+/* Hover */
+.tech-track img:hover {
+  transform: scale(1.2); /* Aumenta el tamaño del ícono al pasar el ratón */
+}
+
+@media (max-width: 768px) {
+  .tech-track {
+    animation: none;
+  }
+}

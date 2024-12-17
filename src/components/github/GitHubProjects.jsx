@@ -81,25 +81,27 @@ function GitHubProjects() {
       <div className="projects-grid">
         {projects.map((project) => (
           <div key={project.id} className="project-card">
-            <h3>{project.name}</h3>
-            <a
-              href={project.html_url}
-              target="_blank"
-              rel="noopener noreferrer"
+            <div className="header-card">
+              <h3>{project.name}</h3>
+              <a
+                href={project.html_url}
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label={project.name}
                 title={project.name}
-            >
-              <img src={githubIcon} alt="Github" className="icon" />
-            </a>
-            
-            <p> { project.description || "No hay descripcion" } </p>
+              >
+                <img src={githubIcon} alt="Github" className="icon" />
+              </a>
+            </div>
+
+            <p> {project.description || "No hay descripcion"} </p>
             <button onClick={() => handleToggleDetails(project)}>
               {visibleProjectId === project.id
                 ? "Ocultar Detalles"
                 : "Ver Detalles"}
             </button>
             {/* Mostrar detalles si está visible */}
-            {visibleProjectId === project.id && projectDetails[project.id] && (  
+            {visibleProjectId === project.id && projectDetails[project.id] && (
               <div className="project-details">
                 <p>
                   <strong>Tecnologías:</strong>{" "}
