@@ -45,7 +45,7 @@
   justify-content: center;
   width: 40px; /* Ajusta el tamaño del fondo circular */
   height: 40px;
-  transition: ilter 0.3s ease-in-out, transform 0.3s ease-in-out; /* Transiciones suaves */
+  transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out; /* Transiciones suaves */
 }
 
 .contact-icons img[alt="Github"] {
@@ -72,6 +72,14 @@
 }
 
 @media (max-width: 768px) {
+  .header-text h1 {
+    font-size: 1.1rem;
+  }
+
+  .header-text p {
+    font-size: .9rem;
+  }
+
   .contact-icons {
     flex-wrap: wrap; /* Permite que los íconos se adapten en filas */
     gap: 10px; /* Reduce el espacio entre íconos */

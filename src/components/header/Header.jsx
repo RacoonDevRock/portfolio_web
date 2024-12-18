@@ -69,7 +69,7 @@ function Header() {
               strings: [
                 "¡Bienvenido!",
                 "Me llamo Guillermo",
-                "Un gusto tenerte aquí =)",
+                "Un gusto verte por aquí =)",
               ],
               autoStart: true,
               loop: true,
@@ -80,7 +80,7 @@ function Header() {
           />
         </h1>
         <p>
-          <strong>A.K.A RacoonDevRock</strong>
+          <strong>Backend Developer</strong>
         </p>
       </div>
     </div>

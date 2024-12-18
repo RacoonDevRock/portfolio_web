@@ -17,6 +17,9 @@ function App() {
         {/* Columna 2: proyectos */}
         <GitHubProjects />
       </div>
+      <h3 className="nickname">
+        <strong className="username">RacoonDevRock</strong>
+      </h3>
     </>
   );
 }

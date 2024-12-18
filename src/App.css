@@ -168,7 +168,6 @@ li {
 }
 
 .icon:hover {
-  color: #61dafb; /* Azul claro */
   background: rgba(
     255,
     255,
@@ -220,5 +219,48 @@ li {
 
   .header-text h1 {
     font-size: 1.2rem; /* Reduce el tamaño de la fuente */
+  }
+}
+
+.nickname {
+  position: fixed;
+  bottom: 10px;
+  right: 20px;
+  font-size: 1rem;
+  z-index: 1000;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+}
+
+.nickname .username {
+  background: linear-gradient(90deg, #ff7eb3, #ff758c, #ffa94d, #85ffbd);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 3s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  .nickname {
+    position: relative;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1rem;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    z-index: none;
   }
 }
