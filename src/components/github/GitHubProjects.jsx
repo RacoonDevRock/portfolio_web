@@ -9,6 +9,7 @@ function GitHubProjects() {
   const [isLoading, setIsLoading] = useState(true);
   const [projectDetails, setProjectDetails] = useState({});
   const [visibleProjectId, setVisibleProjectId] = useState(null);
+  const [loadingDetails, setLoadingDetails] = useState({});
 
   const handleToggleDetails = async (project) => {
     if (visibleProjectId === project.id) {
@@ -20,6 +21,11 @@ function GitHubProjects() {
       setVisibleProjectId(project.id);
       return;
     }
+
+    setLoadingDetails((prevLoading) => ({
+      ...prevLoading,
+      [project.id]: true,
+    }));
 
     try {
       const detailsResponse = await fetch(`${apiUrl}/${project.name}`);
@@ -33,6 +39,11 @@ function GitHubProjects() {
       setVisibleProjectId(project.id);
     } catch (error) {
       console.error("Error al cargar detalles del proyecto:", error);
+    } finally {
+      setLoadingDetails((prevLoading) => ({
+        ...prevLoading,
+        [project.id]: false,
+      }));
     }
   };
 
@@ -101,14 +112,20 @@ function GitHubProjects() {
                 : "Ver Detalles"}
             </button>
             {/* Mostrar detalles si está visible */}
-            {visibleProjectId === project.id && projectDetails[project.id] && (
+            {visibleProjectId === project.id && (
               <div className="project-details">
-                <p>
-                  <strong>Tecnologías:</strong>{" "}
-                  {projectDetails[project.id].languages.length > 0
-                    ? projectDetails[project.id].languages.join(", ")
-                    : "No especificado"}
-                </p>
+                {loadingDetails[project.id] ? (
+                  <p>Cargando detalles...</p>
+                ) : (
+                  projectDetails[project.id] && (
+                    <p>
+                      <strong>Tecnologías:</strong>{" "}
+                      {projectDetails[project.id].languages.length > 0
+                        ? projectDetails[project.id].languages.join(", ")
+                        : "No especificado"}
+                    </p>
+                  )
+                )}
               </div>
             )}
           </div>

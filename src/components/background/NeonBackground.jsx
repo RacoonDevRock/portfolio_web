@@ -16,7 +16,8 @@ function NeonBackground() {
     window.addEventListener("resize", resizeCanvas);
 
     const circles = [];
-    for (let i = 0; i < 30; i++) {
+    const numCircles = 15; 
+    for (let i = 0; i < numCircles; i++) {
       circles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,

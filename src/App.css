@@ -10,6 +10,18 @@
   padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+  position: relative;
+}
+
+.logo-image {
+  max-width: 120px;
+  height: auto;
+  border-radius: 50%;
 }
 
 @keyframes logo-spin {
@@ -37,59 +49,43 @@
   animation: fadeIn 1s ease-in-out;
 }
 
-.logo {
-  display: flex;
-  flex-direction: column; /* Organiza en columna para poner los íconos abajo */
-  align-items: center; /* Centra horizontalmente el contenido */
-  justify-content: center; /* Centra verticalmente */
-  margin: 20px 0; /* Elimina márgenes */
-  position: relative; /* Asegura que el contenido interno pueda posicionarse */
-}
-
-.logo-image {
-  max-width: 120px; /* Ajusta el tamaño máximo del logo */
-  height: auto; /* Mantén la proporción de aspecto */
-  border-radius: 50%; /* Hace que el logo sea circular */
-}
-
 h1,
 h2 {
   text-align: center;
   color: #f9f9f9;
-  font-weight: 700; /* Estilo para títulos */
+  font-weight: 700;
 }
 
 h2 {
   position: relative;
-  display: inline-block; /* Asegura que el efecto funcione correctamente */
-  color: #f9f9f9;
-  font-size: 1.8rem; /* Aumentado */
-  transition: color 0.3s ease-in-out; /* Transición suave para el color */
+  display: inline-block;
+  font-size: 1.8rem;
+  transition: color 0.3s ease-in-out;
 }
 
 h2:hover {
-  color: #ffffff; /* Cambia el color del texto al pasar el cursor */
+  color: #ffffff;
 }
 
 h2::after {
-  content: ""; /* Agrega un elemento decorativo */
+  content: "";
   position: absolute;
   left: 0;
-  bottom: -5px; /* Ajusta la posición debajo del texto */
+  bottom: -5px;
   width: 0;
-  height: 2px; /* Grosor de la línea */
-  background: #ffffff; /* Color de la línea */
-  transition: width 0.3s ease-in-out; /* Transición suave */
+  height: 2px;
+  background: #ffffff;
+  transition: width 0.3s ease-in-out;
 }
 
 h2:hover::after {
-  width: 100%; /* La línea se expande al 100% del ancho del texto */
+  width: 100%;
 }
 
 p,
 li {
   color: #c7c7c7;
-  font-weight: 400; /* Estilo para texto normal */
+  font-weight: 400;
   font-size: 1.1rem;
 }
 
@@ -113,7 +109,6 @@ ul {
 }
 
 li {
-  color: #c7c7c7;
   margin-bottom: 10px;
 }
 
@@ -123,21 +118,28 @@ li {
   background: #333333;
   padding: 20px;
   border-radius: 8px;
-  display: flex; /* Usamos flexbox */
-  flex-direction: column; /* Organiza el texto y los íconos en columna */
-  align-items: center; /* Centra horizontalmente */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .contact h2 {
-  margin-bottom: 20px; /* Espaciado entre el título y los íconos */
-  font-size: 1.5rem; /* Tamaño del título */
+  margin-bottom: 20px;
+  font-size: 1.5rem;
   color: #f9f9f9;
 }
 
 .icon {
-  width: 25px; /* Ajusta el tamaño del ícono */
+  width: 25px;
   height: 25px;
   filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+  font-size: 2rem;
+  color: #c7c7c7;
+  transition: color 0.3s ease;
+}
+
+.icon:hover {
+  background: rgba(255, 255, 255, 0.1);
 }
 
 @media (prefers-color-scheme: light) {
@@ -161,22 +163,6 @@ li {
   }
 }
 
-.icon {
-  font-size: 2rem; /* Tamaño de los íconos */
-  color: #c7c7c7;
-  transition: color 0.3s ease;
-}
-
-.icon:hover {
-  background: rgba(
-    255,
-    255,
-    255,
-    0.1
-  ); /* Fondo circular tenue al pasar el mouse */
-}
-
-/* Animación de scroll continuo */
 @keyframes scroll {
   0% {
     transform: translateX(0);
@@ -194,31 +180,6 @@ li {
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@media (max-width: 768px) {
-  .projects-grid {
-    grid-template-columns: 1fr; /* Una sola columna */
-    gap: 15px; /* Reduce el espacio entre proyectos */
-  }
-
-  .header-text h1 {
-    font-size: 1rem; /* Ajusta el tamaño del título */
-  }
-
-  .container {
-    width: 95%; /* Asegúrate de que tenga un margen lateral pequeño */
-    padding: 15px; /* Reduce el padding */
-  }
-
-  .header {
-    flex-direction: column; /* Cambia el layout a columna en móviles */
-    text-align: center; /* Centra el texto */
-  }
-
-  .header-text h1 {
-    font-size: 1.2rem; /* Reduce el tamaño de la fuente */
   }
 }
 
@@ -252,6 +213,29 @@ li {
 }
 
 @media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .header-text h1 {
+    font-size: 1rem;
+  }
+
+  .container {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .header-text h1 {
+    font-size: 1.2rem;
+  }
+
   .nickname {
     position: relative;
     bottom: 10px;
